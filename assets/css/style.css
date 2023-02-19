@@ -1,0 +1,355 @@
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+:root {
+    --Active-input-border: hsl( 249, 99%, 64%),hsl(278, 94%, 30%);
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+    font-family: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    min-height: 100%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+.cards-section {
+    width: 100%;
+    height: 250px;
+    background: url("images/bg-main-mobile.png") no-repeat top center;
+    background-size: 100%;
+    position: relative;
+    color: var(--White);
+    width: 100%;
+}
+
+.front-card {
+    --padding-card: 1.5rem;
+    z-index: 2;
+    bottom: -2.5rem;
+    left: 1rem;
+}
+
+.back-card {
+    top: 3rem;
+    right: 1rem;
+}
+
+.front-card, 
+.back-card {
+    position: absolute;
+}
+
+.front-card > *:not(.card-front-bg),
+.back-card > *:not(.card-back-bg){
+    position: absolute;
+}
+
+.card-front-bg,
+.card-back-bg {
+    width: 280px;
+}
+
+.logo {
+    top: var(--padding-card);
+    left: var(--padding-card);
+    width: 20%;
+}
+
+.number {
+    top: 53%;
+    left: var(--padding-card);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.name {
+    bottom: 1rem;
+    left: var(--padding-card);
+    font-size: .8rem;
+}
+
+.expiry {
+    bottom: 1rem;
+    right: var(--padding-card);
+    font-size: .75rem;
+}
+
+.cvc {
+    top: 43%;
+    right: 2.5rem;
+    font-size: .8rem;
+}
+
+.container {
+    padding-inline: 1.5rem;
+    width: clamp(280px, 90vw + 2rem, 600px);
+    margin-inline: auto;
+}
+
+.response {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+    transform: scaleX(0);
+    transition: all .5s ease-in-out;
+    height: 0;
+}
+
+.complete > img{
+    margin-inline: auto;
+}
+
+h1 {
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.response > p {
+    color: var(--Dark-grayish-violet);
+    margin-bottom: 2rem;
+}
+
+.complete {
+    width: 100%;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+    transition: all .5s ease-in-out;
+}
+
+.form-section > *, .response > * {
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    text-transform: uppercase;
+    font-size: .8rem;
+}
+
+input {
+    padding: .4rem .6rem;
+    color: var(--Very-dark-violet);
+    outline: none;
+    border: 2px solid var(--Light-grayish-violet);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--Light-grayish-violet);
+}
+
+input:focus {
+    border: double 3px transparent;
+    background-image: 
+        linear-gradient(white, white), 
+        linear-gradient(to right, var(--Active-input-border));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;                   
+}
+
+.bottom-form {
+    display: flex;
+    align-content: center;
+    gap: .8rem;
+}
+
+.cvc-section {
+    width: 55%;
+}
+
+.date {
+    display: flex;
+    gap: .5rem;
+}
+
+.date > * > input {
+    width: 100%;
+}
+
+button, .continue-btn {
+    padding: .7rem;
+    background-color: var(--Very-dark-violet);
+    color: var(--Light-grayish-violet);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.error {
+    margin-top: .4rem;
+    color: var(--Red);
+    font-size: .7rem;
+}
+
+footer {
+    margin-top: auto;
+    margin-inline: auto;
+}
+
+@media (pointer:fine) and (hover:hover) {
+    input:hover {  
+        border: double 3px transparent;
+        background-image: 
+            linear-gradient(white, white), 
+            linear-gradient(to right, var(--Active-input-border));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+}
+
+
+@media (min-width: 970px) {
+    main {
+        grid-template-columns: 55% 1fr;
+        gap: 5rem;
+    }
+
+    .cards-section {
+        background: url("../images/bg-main-desktop.png") no-repeat;
+        background-size: contain;
+        height: 100%;
+    }
+
+    .front-card,
+    .back-card {
+        width: 447px;
+        position: relative;
+    }
+
+    .front-card {
+        --padding-card: 2rem;
+        inset: 20% 18%;
+    }
+    
+    .back-card {
+        inset: 24% 30%; 
+    }
+
+    .card-front-bg,
+    .card-back-bg,
+    .logo {
+        width: revert;
+    }
+    
+    .number {
+        top: 55%;
+        left: var(--padding-card);
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    .name {
+        bottom: 1.5rem;
+        left: var(--padding-card);
+        font-size: inherit;
+    }
+    
+    .expiry {
+        bottom: 1.5rem;
+        right: var(--padding-card);
+        font-size: inherit;
+    }
+    
+    .cvc {
+        top: 45%;
+        right: 3.5rem;
+    }
+
+    .container {
+        padding: 0;
+        margin-block: auto;
+        margin-inline: 1rem;
+        width: clamp(300px, 30vw + 2rem, 430px);
+    }
+
+    label {
+        font-size: .9375rem;
+    }
+
+    input {
+        padding: .7rem;
+    }
+
+    button, .continue-btn {
+        padding: .9rem;
+    }
+    
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 55%;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        gap: 0;
+    }
+
+}

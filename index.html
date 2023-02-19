@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+</head>
+<body>
+  <main>
+    <div class="cards-section">
+      <div class="front-card">
+        <img src="./assets/images/bg-card-front.png" class="card-front-bg" alt="bg-card-front">
+        <img src="./assets/images/card-logo.svg" class="logo" alt="card-logo" />
+        <span class="number">0000 0000 0000 0000</span>
+        <span class="name">João da Silva</span>
+        <div class="expiry">
+          <span class="month">00</span>
+          /
+          <span class="year">00</span>
+        </div>
+      </div>
+      <div class="back-card">
+        <img
+          src="./assets/images/bg-card-back.png"
+          class="card-back-bg"
+          alt="bg-card-back"
+        />
+        <span class="cvc">000</span>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Completed state start -->
+      <div class="response">
+        <div class="complete">
+          <img src="./images/icon-complete.svg" alt="icon-complete">
+        </div>
+        <h1>Thank you!</h1>
+        <p>We&#8217;ve added your card details</p>
+        <a href="/" class="continue-btn">Continue</a>
+      </div>
+      <!--form section-->
+      <form action="#" class="form-section">
+        <div class="name-section form-group">
+          <label for="form-name">DIGITE O NOME IMPRESSO NO CARTÃO</label>
+          <input type="text" id="form-name" name ="form-name" placeholder="Ex.: Danilo Ferreira Lacerda">
+          <div class="error"></div>
+        </div>
+        <div class="number-section form-group">
+          <label for="form-number">NÚMERO DO CARTÃO</label>
+          <input type="text" id="form-number" name="form-number" placeholder="1234 5678 9123 0000" maxlength="19">
+          <div class="error"></div>
+        </div>
+        <div class="bottom-form">
+          <div class="exp-section form-group">
+            <label for="form-month">VALIDADE (MM/AA)</label>
+            <div class="date">
+              <div class="exp-month">    
+                <input  type="text" id="form-month" name="form-month" placeholder="MM" maxlength="2" />
+                <div class="error"></div>
+              </div>
+              <div class="exp-year">
+                <input type="text" id="form-year" name="form-year" placeholder="AA" maxlength="2" />
+                <div class="error"></div>
+              </div>
+            </div>
+          </div>
+          <div class="cvc-section form-group">
+            <label for="form-cvc">CVV</label>
+            <input type="text" id="form-cvc" name="form-cvc" placeholder="123" maxlength="3" />
+            <div class="error"></div>
+          </div>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="attribution">
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+      Frontend Mentor
+    </a>
+    . Coded by
+    <a href="#">Danilo Ferreira Lacerda</a>
+    .
+  </footer>
+  <script src="./script.js"></script>
+</body>
+</html>
